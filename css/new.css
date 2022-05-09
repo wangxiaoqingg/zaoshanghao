@@ -1,0 +1,789 @@
+/*--------------------全局--------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, textarea, select, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin: 0;padding: 0;outline: 0; border: 0; vertical-align: baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}
+body, button, input, select, textarea, label, option, fieldset, legend{font-size:12px; font-family: "Microsoft yahei", 微软雅黑, 宋体, Helvetica, Airal, sans-serif;}
+body, html {height: 100%;}
+body { position: relative; min-width: 1280px; overflow-y: auto;
+    top: 0px;
+    left: 0px;
+}
+input, select, textarea, button{vertical-align: middle;}
+h1, h2, h3, h4, h5, h6{font-size:inherit;}
+ol, ul{list-style: none;}
+table{border-collapse: collapse; border-spacing: 0px;}
+em, i, u{font-style: normal;}
+a, u{text-decoration: none;}
+img{display:inline-block; vertical-align:top;}
+.clearfix{content:""; display:block; clear:both; overflow:hidden;}
+/*--------------------icon--------------------*/
+.ui-icon{background:url(../icon/icon.png) no-repeat; display:block;}
+.ui-icon-logo{background-position:0px 0px;}/*158*36-logo*/
+.ui-icon-search-bg{background-position:-168px 0px;}/*141*22-搜索背景*/
+.ui-icon-search-button{background-position:-320px 0px;}/*10*13-搜索按钮*/
+/*--------------------二级页面icon--------------------*/
+.ui-icon-internet-banking{background-position:-4px -56px;}/*80*80-互联网金融*/
+.ui-icon-guarantee{background-position:-88px -56px;}/*80*80-瀚华担保*/
+.ui-icon-credit{background-position:-168px -56px;}/*80*80-瀚华信贷*/
+.ui-icon-financial-factoring-1{background-position:-270px -56px;}/*80*80-长江金融保理*/
+.ui-icon-learn-more{background-position:-340px 0px;}/*16*28-了解更多*/
+.ui-icon-browse-videos{background-position:-366px 0px;}/*32*25-浏览视频*/
+.ui-icon-slideshow-left{background-position:-360px -70px;}/*27*52-社会责任幻灯片左默认*/
+.ui-icon-slideshow-right{background-position:-397px -70px;}/*27*52-社会责任幻灯片右默认*/
+.ui-icon-diamond{background-position:-408px 0px;}/*9*9-菱形*/
+.ui-icon-more{background-position:-427px 0px;}/*11*11-更多默认*/
+.ui-icon-events-timeline-triangle{background-position:-469px 0px;}/*10*10-时间轴三角*/
+.ui-icon-events-timeline-left{background-position:-489px 0px;}/*6*13-时间轴左*/
+.ui-icon-events-timeline-right{background-position:-505px 0px;}/*6*13-时间轴右*/
+.ui-icon-contactus-triangle{background-position:-553px 0px;}/*19*19-联系我们三角*/
+.ui-icon-news-inquiry-selected{background-position:-582px 0px;}/*9*5-年份选择*/
+.ui-icon-pageprev{background-position:-601px 3px;}/*24*24-上页*/
+.ui-icon-pagenext{background-position:-635px 3px;}/*24*24-下页*/
+.ui-icon-yun{background-position:0px -156px}/*190*70-瀚华云*/
+.ui-icon-yun-arrow{background-position:-777px 0px;}/*9*10-瀚华通箭头*/
+.ui-icon-tong{background-position:-200px -142px;}/*190*70-瀚华通*/
+.ui-icon-round{background-position:0px -236px;}/*108*108-瀚华通*/
+.ui-icon-business-acceptance{background-position:-118px -236px;}/*80*80-业务受理*/
+.ui-icon-due-diligence{background-position:-208px -236px;}/*80*80-尽职调查*/
+.ui-icon-project-evaluation{background-position:-298px -236px;}/*80*80-项目评审*/
+.ui-icon-loan-signing{background-position:-388px -236px;}/*80*80-签约放款*/
+.ui-icon-repayment{background-position:-478px -236px;}/*80*80-保后及还款*/
+.ui-icon-arrow-right{background-position:-568px -236px;}/*9*18-箭头右*/
+.ui-icon-diamond-s{background-position:-815px 0px;}/*14*14-菱形小*/
+.ui-icon-loan-growth{background-position:0px -366px;}/*145*145-成长贷*/
+.ui-icon-zhou-loan{background-position:-146px -366px;}/*145*145-周转贷*/
+.ui-icon-instant-loan{background-position:-291px -366px;}/*145*145-即时贷*/
+.ui-icon-housing-loan{background-position:-435px -366px;}/*145*145-房易贷*/
+.ui-icon-easypay-loan{background-position:-581px -366px;}/*145*145-薪易贷*/
+.ui-icon-simple{background-position:0px -529px;}/*82*82-简单*/
+.ui-icon-speed{background-position:-92px -529px;}/*82*82-速度*/
+.ui-icon-standard{background-position:-184px -529px;}/*82*82-标准*/
+.ui-icon-security{background-position:-276px -529px;}/*82*82-安全*/
+.ui-icon-smile{background-position:-368px -529px;}/*82*82-微笑*/
+.ui-icon-nine{background-position:-460px -529px;}/*82*82-9:00*/
+.ui-icon-ten{background-position:-552px -529px;}/*82*82-10:00*/
+.ui-icon-sixteen{background-position:-644px -529px;}/*82*82-16:00*/
+.ui-icon-business-factoring{background-position:0px -628px;}/*145*145-商业保理*/
+.ui-icon-financial-factoring{background-position:-150px -628px;}/*145*145-金融保理*/
+.ui-icon-international-factoring{background-position:-299px -628px;}/*145*145-国际保理*/
+.ui-icon-piaoju-factoring{background-position:-300px -799px;}/*145*145-票据保理*/
+.ui-icon-zaibaoli-factoring{background-position:0px -799px;}/*145*145-再保理*/
+.ui-icon-zulinbaoli-factoring{background-position:-150px -799px;}/*145*145-租赁保理*/
+.ui-icon-platform{background-position:-448px -628px;}/*150*150-互联网交易平台*/
+.ui-icon-cjb{background-position:-400px -156px;}/*200*55-长金保*/
+.ui-icon-round-red{background-position:-839px 0px;}/*25*25-红圆*/
+.ui-icon-round-gray{background-position:-874px 0px;}/*25*25-灰圆*/
+.ui-icon-platform-self{background-position:-625px -631px;}/*50*50-平台自律*/
+.ui-icon-investment-security{background-position:-685px -631px;}/*50*50-投资安全*/
+.ui-icon-transaction-security{background-position:-745px -631px;}/*50*50-交易安全*/
+.ui-icon-funds-security{background-position:-805px -631px;}/*50*50-资金安全*/
+.ui-icon-information-security{background-position:-865px -631px;}/*50*50-信息安全*/
+.ui-icon-phone{background-position:-925px -631px;}/*35*35-电话*/
+/*--------------------背景图片--------------------*/
+.ui-layout-bg { height: 100%; width: 100%; position: fixed; top: 0px; left: 0px; z-index: 1; overflow: hidden; }
+.ui-layout-bg img { display: block; position: absolute; bottom: 0px; width: 100%; height: auto; }
+/*
+.ui-bg{ width:100%; background-repeat: no-repeat; background-attachment:fixed; background-position-y: bottom; }
+.ui-bg-about-01,.ui-bg-about-02,.ui-bg-about-03,.ui-bg-about-04,.ui-bg-about-05,.ui-bg-about-06,.ui-bg-product-01,.ui-bg-product-02,.ui-bg-product-03,.ui-bg-product-04,.ui-bg-product-05,.ui-bg-investor-01,.ui-bg-investor-02,.ui-bg-investor-03,.ui-bg-investor-04,.ui-bg-investor-05,.ui-bg-investor-06,.ui-bg-news-01,.ui-bg-news-02{background-position: center bottom;background-attachment: fixed;background-repeat: no-repeat;}
+.ui-bg-about-01{background-image:url(../images/bg-about-001.jpg); background-color: #BDD6EE; }
+.ui-bg-about-02{background-image:url(../images/bg-about-001.jpg);}
+.ui-bg-about-03{background-image:url(../images/bg-about-001.jpg);}
+.ui-bg-about-04{background-image:url(../images/bg-about-001.jpg);}
+.ui-bg-about-05{background-image:url(../images/bg-about-001.jpg);}
+.ui-bg-about-06{background-image:url(../images/bg-about-001.jpg);}
+
+.ui-bg-product-01{background-image:url(../images/bg-product-01.jpg);}
+.ui-bg-product-02{background-image:url(../images/bg-product-02.jpg);}
+.ui-bg-product-03{background-image:url(../images/bg-product-03.jpg);}
+.ui-bg-product-04{background-image:url(../images/bg-product-04.jpg);}
+.ui-bg-product-05{background-image:url(../images/bg-product-05.jpg);}
+
+.ui-bg-investor-01{background-image:url(../images/bg-investor-01.jpg);}
+.ui-bg-investor-02{background-image:url(../images/bg-investor-01.jpg);}
+.ui-bg-investor-03{background-image:url(../images/bg-investor-01.jpg);}
+.ui-bg-investor-04{background-image:url(../images/bg-investor-01.jpg);}
+.ui-bg-investor-05{background-image:url(../images/bg-investor-01.jpg);}
+.ui-bg-investor-06{background-image:url(../images/bg-investor-01.jpg);}
+
+.ui-bg-news-01{background-image:url(../images/bg-news-01.jpg);}
+.ui-bg-news-02{background-image:url(../images/bg-news-01.jpg);}
+*/
+/*--------------------遮罩--------------------*/
+.ui-shade { position: fixed; top: 0px; left: 0px; z-index: 9999; width: 100%; height: 100%; background: #000; filter:alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8; }
+/*--------------------整体外套--------------------*/
+.ui-wrap{ position: absolute; z-index: 100; width: 100%; overflow: hidden; }
+/*--------------------头部--------------------*/
+.ui-header { width: 1000px; position: absolute; top: 0px; left: 50%; margin-left: -500px; z-index: 100; }
+.ui-home-header { position: absolute; top: 0px; left: 50%; z-index: 100; margin-left: -500px; }
+/*----------功能----------*/
+.ui-function{overflow:hidden;}
+/*-----语言-----*/
+.ui-language{float:right; border-left:1px solid #000; padding:25px 0 0 19px; margin:0 0 0 20px;}
+.ui-language a{font-size:12px; color:#000;}
+.ui-language span{padding:0 11px;}
+.ui-language a:hover{color:#c7000a;}
+/*-----搜索-----*/
+.ui-search{float:right; width:141px; height:22px; margin:21px 0 0;}
+/*.ui-search input{float:left; width:110px; height:22px; line-height:22px; font-size:12px; color:#999; background:none; padding:0 0 0 5px;}*/
+.ui-search input[type="text"]{float:left; width:110px; height:22px; line-height:22px; font-size:12px; color:#999; background:none; padding:0 0 0 5px;}
+.ui-search input[type="submit"]{ width:30px; height:22px; line-height:22px;  background:none;}
+.ui-search a{float:right; width:10px; height:13px; margin:5px 7px 0 0;}
+/*----------导航----------*/
+.ui-nav-box{padding:5px 0 0; overflow:hidden;}
+/*-----logo-----*/
+.ui-logo{float:left;position:absolute;top:50px;left:20%;margin-left:-160px;z-index:100;}
+.ui-logo a{width:158px; height:36px; text-indent:-999px;}
+/*-----主导航-----*/
+.ui-nav{float:right; padding:18px 0 0;}
+.ui-nav li>a{display:inline-block; height:20px; font-size:14px; color:#000; font-weight:bold; margin:0 0 0 54px;}
+.ui-nav a:hover{color:#c7000a;}
+.ui-nav .ui-selected{color:#c7000a!important; border-bottom:2px solid #cd1b0d;}
+
+/*胡春华  下拉*/
+.nav-menu-top {padding:0px;}
+.nav-menu-top li{ float:left;}
+
+.nav-top-box {position:absolute; text-align:center; display:none; border-top:2px solid #c7000a;}
+.nav-top-box dd {padding:0px 20px; margin-top:1px; height:30px; background-color:#fff; line-height:30px;opacity: 0.9; -moz-opacity:0.9; -khtml-opacity: 0.9; filter:alpha(opacity=90);}
+.nav-top-box dd a {font-size:14px;color:#333;}
+#AboutUS_bt_ul {margin-left:26px}
+#Product_bt_ul { margin-left:20px;}
+#Investment_bt_ul {margin-left:36px}
+#News_bt_ul { margin-left:35px;}
+
+/*--------------------首页--------------------*/
+/*----------宣传片----------*/
+.ui-promo { position: relative; width: 100%; background: #fff; margin-bottom: 8px; }
+.ui-promo ul { width: 100%; height: 100%; overflow: hidden;}
+.ui-promo ul li, .ui-promo ul li a{ display: block; width: 100%; height: 100%; text-align: center; }
+.ui-promo ul li a strong{ font-size: 48px; display: block; position: absolute; top: 40%; left: 0px; font-weight: normal; text-align: center; color: #c7000a; }
+/*.ui-promo ul li#li_1 a strong { width: 100%; }*/
+.ui-promo ul li a strong { left: 40%; }/*.ui-promo ul li#li_6 a strong { left: 40%; }*/
+.ui-promo ul li a img { margin: 0px auto; width: 100%; height: auto; }
+.ui-promo-tab { position: absolute; bottom: 20px; left: 0px; width: 100%; text-align: center; }
+.ui-promo-tab a{ display: inline-block; margin: 0px 5px; width: 10px; height: 10px; background: url(../icon/promo-tab.png) -10px 0px no-repeat; cursor: default; }
+.ui-promo-tab a.ui-selected, .ui-promo-tab a:hover{ background-position-x: 0px; }
+/*----------业务----------*/
+.ui-business{ height: 28%; }
+.ui-business ul{ height: 100%; }
+.ui-business ul li{ position: relative; float: left; width: 20%; height: 100%; background: #f5f5f5; }
+/*.ui-business ul li{ position: relative; width: 25%; height: 100%; background: #f5f5f5; margin-right: 8px; }*/
+.ui-business ul li:hover { background: #e2e3e4; }
+.ui-business ul li span.ui-line { position: absolute; top: 0px; left: -4px; display: block; width: 8px; height: 100%; background: #fff; }
+.ui-business li p { position: absolute; top: 50%; margin-top: -84px; width: 100%; height: 148px; text-align: center; }
+.ui-business li .ui-business-icon { display: block; background: url(../icon/business-icon.png) no-repeat; width: 100px; height: 100px; margin: 0px auto; }
+.ui-business li .ui-business-icon-01 { background-position: 0px 0px; }
+.ui-business li .ui-business-icon-02 { background-position: -100px 0px; }
+.ui-business li .ui-business-icon-03 { background-position: -200px 0px; }
+.ui-business li .ui-business-icon-04 { background-position: -300px 0px; }
+.ui-business li .ui-business-icon-05 { background:url(../icon/business-icon-05.png) no-repeat 15px 20px;}
+.ui-business li:hover .ui-business-icon-01 { background: url(../icon/gif-business-icon-01.gif) no-repeat; }
+.ui-business li:hover .ui-business-icon-02 { background: url(../icon/gif-business-icon-02.gif) no-repeat; }
+.ui-business li:hover .ui-business-icon-03 { background: url(../icon/gif-business-icon-03.gif) no-repeat; }
+.ui-business li:hover .ui-business-icon-04 { background: url(../icon/gif-business-icon-04.gif) no-repeat; }
+.ui-business li:hover .ui-business-icon-05 { background: url(../icon/gif-business-icon-05.gif) no-repeat; }
+.ui-business li .ui-business-title { display: block; height: 20px; line-height: 20px; font-size: 18px; color: #000; font-weight: normal; overflow: hidden; margin-bottom: 8px; }
+.ui-business li .ui-business-text { display: block; height: 20px; line-height: 20px; font-size: 14px; color: #666; overflow: hidden; }
+/*--------------------内容--------------------*/
+.ui-content{ width: 1000px; height:auto; margin: 0px auto; overflow:hidden;}
+/*----------内容-左----------*/
+.ui-content-left-haschild {display:block; font-size:14px; color:#333; text-align:center; height:40px; line-height:40px;  background:url(../icon/left-menu-btom.png) no-repeat right;}
+/*.ui-content-left-nav li a.ui-content-left-haschild:hover, .ui-content-left-nav li.ui-selected a.ui-content-left-haschild{background: url(../icon/menu-hover.png) 0px -3px no-repeat; color: #fff; width:230px; }*/
+.ui-content-left-nav li.ui-selected a.ui-content-left-haschild{background: url(../icon/menu-hover.png) 0px -3px no-repeat; color: #fff; padding-right:20px; width:210px; }
+/*.ui-content-left-nav li a.ui-content-left-haschild:hover,*/ .ui-content-left-nav li.ui-mouseover a.ui-content-left-haschild{background: url(../icon/menu-hover.png) 0px -3px no-repeat; color: #fff; width:210px; }
+.ui-content-left-nav li.ui-mouseover a.ui-left-nav{background: url(../icon/menu-hover.png) 0px -3px no-repeat; color: #fff; width:210px; }
+
+.ui-content-left{float:left; width:210px; height:auto;}
+.ui-content-left-nav li{width:210px; margin:0 0 1px 0;font-weight:bold;}
+.ui-content-left-nav li a.ui-left-nav{display:block; font-size:14px; color:#333333; text-align:center; background:#fff;height:40px; line-height:40px; }
+.ui-content-left-nav li.ui-selected a.ui-left-nav{background: url(../icon/menu-hover.png) 0px -3px no-repeat; color: #fff;padding-right:20px; width:210px; }
+/*.ui-content-left-nav li a.ui-left-nav:hover,*/ .ui-content-left-nav li.ui-mouseover a.ui-left-nav{background: url(../icon/menu-hover.png) 0px -3px no-repeat; color: #fff; width:210px; }
+
+ /*.ui-content-left-nav li div.ui-unfold { display: none; text-align:center }*/
+.ui-content-left-nav li div.ui-unfold { display: none; font-weight:400; }
+/*.ui-content-left-nav li.ui-selected div.ui-unfold {display: block !important;}*/
+.ui-content-left-nav li div.ui-unfold a {display: block;color:#333;background-color: #fff;text-decoration: none;font-size:14px; line-height:32px;text-align:center;  background:url(../icon/left-menu-child.png) no-repeat right;}
+.ui-content-left-nav li div.ui-unfold a:hover { color: #c7000a; background:url(../icon/left-menu-select.png) no-repeat right; }
+/*.ui-content-left-nav li:hover div.ui-unfold {display: block;}*/
+
+/*.ui-content-left{float:left; width:210px; z-index: 101;}
+.ui-content-left-nav li{width:210px; height:45px; line-height:45px; margin:0 0 1px 0; position:relative; vertical-align:top;}
+.ui-content-left-nav li a.ui-left-nav{display:block; font-size:16px; color:#3c4347; text-align:center; background:#fff; opacity: 0.9; -moz-opacity:0.9; -khtml-opacity: 0.9; filter:alpha(opacity=90);}
+.ui-content-left-nav li a.ui-left-nav:hover, .ui-content-left-nav li.ui-selected a.ui-left-nav{background: url(../icon/menu-hover.png) 0px -3px no-repeat; color: #fff; width:230px; height:45px;}
+.ui-content-left-nav li div.ui-unfold{display:none; width:140px; border-top:4px solid #cc1922; position:absolute; left:220px; top:0px; z-index:100;}
+.ui-content-left-nav li div.ui-unfold a{display:block; height:40px; line-height:40px; font-size:16px; color:#3c4347; text-align:center; background:#e8e8e8; border-bottom:1px solid #ccc;}
+.ui-content-left-nav li div.ui-unfold a:hover{color:#c7000a; background:#d5d5d5;}
+.ui-content-left-nav li:hover div.ui-unfold{display:block;}*/
+/*----------内容-右----------*/
+.ui-content-right{float:right; width:680px; overflow:hidden; padding:50px; background: url(../icon/right-bg.png) repeat;}
+/*--------------------底部--------------------*/
+.ui-footer{width:100%; height:65px; background:#fff; }
+.ui-copyright{width:1000px; margin-left:auto; margin-right:auto;}
+.ui-copyright-left{float:left; font-size:12px; margin-top:15px; }
+.ui-copyright-left a{color:#555; margin:0 10px 0 0;}
+.ui-copyright-left a:hover{color:#c7000a;}
+.ui-copyright-left p{color:#888; padding:5px 0 0;}
+.ui-copyright-right{float:right; padding:5px 0 0; margin-top:15px; }
+/*--------------------右侧内容区域样式--------------------*/
+/*--------------------关于瀚华页面--------------------*/
+/*----------集团简介----------*/
+.ui-group-profile-assets{overflow:hidden; margin-top: 30px;}
+.ui-group-profile-assets li{float:left; width:25%; text-align:center; }
+.ui-group-profile-assets li span{color:#c7000a; font-size:32px;}
+.ui-group-profile-assets li em{color:#c7000a; font-size:14px;}
+.ui-group-profile-assets li p{color:#555; font-size:14px; padding:5px 0 0;}
+.ui-group-profile-writing{font-size:14px; color:#333; padding:45px 0 0; line-height:25px;}
+.ui-group-profile-flop{padding:60px 0 40px; overflow:hidden;}
+.ui-group-profile-flop li{float:left; width:48%; height:180px;}
+.ui-group-profile-flop-r{margin:0 20px 20px 0;}
+.ui-group-profile-flop-default{display:block; width:100%; height:150px; background:#fff; text-align:center; padding:30px 0 0;}
+.ui-group-profile-flop-default span{width:80px; height:80px; margin:0 auto 0;}
+.ui-group-profile-flop-default em{font-size:16px; color:#333;}
+.ui-group-profile-flop-unfold{width:100%; height:180px; background:#999; display:none;}
+.ui-group-profile-flop-unfold-explanation{float:left; width:80%;}
+.ui-group-profile-flop-unfold-explanation dd{float:left; width:50%; color:#fff; text-align:center; padding:15px 0 0;}
+.ui-group-profile-flop li.ui-li-1 .ui-group-profile-flop-unfold-explanation dd{ width: 100%; float: none; padding-top: 25px; }
+.ui-group-profile-flop li.ui-li-4 .ui-group-profile-flop-unfold-explanation dd{ width: 100%; float: none; }
+.ui-group-profile-flop-unfold-explanation dd span{font-size:35px;}
+.ui-group-profile-flop-unfold-explanation dd em, .ui-group-profile-flop-unfold-explanation dd p{font-size:12px;}
+.ui-learn-more{display:block; float:right; width:20%; height:180px; font-size:14px; background:#cd1b0d; color:#fff; text-align:center;}
+.ui-learn-more span{width:16px; height:28px; margin:70px auto 35px;}
+.ui-group-profile-flop li:hover a.ui-group-profile-flop-default{display:none;}
+.ui-group-profile-flop li:hover div.ui-group-profile-flop-unfold{display:block;}
+.ui-browse-videos{display:block; width:330px; height:45px; line-height:45px; font-size:14px; color:#333; border: solid 1px #333; border-radius:5px; -ms-border-radius:5px; -webkit-border-radius:5px; margin:0 auto 0; padding:0 0 0 15px;}
+.ui-browse-videos:hover{ font-size:14px; color:#fff; border-color: #cd1b0d; background: #cd1b0d; }
+.ui-browse-videos span{float:right; width:32px; height:25px; margin:10px 20px 0 0; background: url(../icon/browse-videos.png);}
+.ui-browse-videos:hover span{ background: url(../icon/icon.png); background-position:-366px 0px; }
+/*----------企业文化----------*/
+.ui-corporate-culture{width:100%; overflow:hidden;}
+.ui-corporate-culture li{float:left; text-align:center;}
+.ui-corporate-culture li img{width:100%; height:100%; max-width:140px; max-height:140px;}
+.ui-corporate-culture li h3{font-size:18px; color:#c7000a; padding:16px 0 30px;}
+.ui-corporate-culture li p, .ui-social-responsibility-explanation{text-align:left; text-justify:inter-ideograph; text-align:justify; font-size:14px; color:#333; line-height:26px;}
+.ui-style-plus{font-size:18px; font-weight:bold; color:#c7000a; padding:60px 0 0; }
+.ui-width28{width:28%;}
+.ui-width7{width:7.5%;}
+/*----------社会责任----------*/
+.ui-social-responsibility{width:600px; margin:0 auto 0; position:relative;}
+.ui-social-responsibility-bigp{position:relative; width:600px; height:300px; overflow:hidden;}
+.ui-social-responsibility-bigp ul{position:absolute; width:10000px;}
+.ui-social-responsibility-bigp ul li{float:left;}
+.ui-social-responsibility-bigp ul li a{display:block; width:600px; height:300px; overflow:hidden;}
+.ui-social-responsibility-bigp ul li a span{display:block; width:600px; height:30px; line-height:30px; text-align:center; font-size:14px; color:#fff; position:absolute; bottom:0; left:0; background:#000; opacity: 0.2; filter:alpha(opacity=20);}
+.ui-social-responsibility-bigp ul li a img{width:100%; height:100%; max-width:600px; max-height:300px;}
+.ui-social-responsibility-smallp-box{position:relative; width:600px; height:68px; overflow:hidden; margin:22px 0 0;}
+.ui-slideshow-left, .ui-slideshow-right{width:27px; height:52px; position:absolute;}
+.ui-slideshow-left{top:8px; left:0px;}
+.ui-slideshow-right{top:8px; right:0px;}
+.ui-slideshow-left:hover, .ui-honor-left:hover{background: url(../icon/icon.png) -434px -70px no-repeat;}
+.ui-slideshow-right:hover, .ui-honor-right:hover{background: url(../icon/icon.png) -471px -70px no-repeat;}
+.ui-social-responsibility-center{width:472px; position:absolute; top:0px; left:64px; overflow:hidden;}
+.ui-social-responsibility-smallp{width:2000px;}
+.ui-social-responsibility-smallp li{float:left; margin:0 13px 0 0;}
+.ui-social-responsibility-smallp li a{display:block; width:68px; height:68px; overflow:hidden;}
+.ui-social-responsibility-smallp li a span{display:block; width:68px; height:68px; position:absolute; background:#fff; opacity: 0.2; filter:alpha(opacity=20);}
+.ui-social-responsibility-smallp li a img{width:100%; height:100%; max-width:68px; max-height:68px;}
+.ui-social-responsibility-smallp li a:hover span{opacity: 0; filter:alpha(opacity=0);}
+.ui-social-responsibility-explanation{padding:30px 0 0; margin-top: 40px; border-top: solid 1px #ddd; }
+/*----------资质荣誉----------*/
+.ui-qualification{overflow:hidden; padding:0 0 50px;}
+.ui-qualification-title{height:26px; border-bottom:1px solid #ccc;}
+.ui-qualification-title p{float:left; height:26px; font-size:16px; color:#333; border-bottom:1px solid #c7000a;}
+.ui-qualification-title p i{float:left; width:9px; height:9px; margin:6px 6px 0 0;}
+.ui-qualification-title a{float:right; font-size:12px; color:#333; font-family:宋体; margin:5px 0 0;}
+.ui-qualification-title a span{float:left; width:11px; height:11px; margin:1px 2px 0 0;}
+.ui-qualification-title a:hover{color:#c7000a;}
+.ui-qualification-title a:hover span{background: url(../icon/icon.png) -448px 0px no-repeat;}
+.ui-qualification-certificate{width:100%; padding:20px 0 0;text-align:justify;
+ text-justify:inherit}
+.ui-qualification-certificate li{float:left; width:18%;margin-right:2%; text-align:center;}
+.ui-qualification-certificate li a{width:100px; height:220px; overflow:hidden;}
+.ui-qualification-certificate li a img{width:100%; height:100%; max-width:160px; max-height:220px;}
+.ui-qualification-certificate li p{font-size:11px; color:#333; padding:15px 20px 0;}
+.ui-honor{width:670px; position:relative; padding:40px 0 0;}
+.ui-honor-slideshow{width:560px; position:relative; margin:0 auto 0;}
+.ui-honor-slideshow ul{width:560px; position:relative; overflow:hidden;}
+.ui-honor-slideshow ul li p{font-size:14px; color:#333; text-align:center; padding:20px 0 0;}
+.ui-honor-slideshow-box-01{width:400px; position:relative; left:80px; top:0px; z-index:10;}
+.ui-honor-slideshow-box-02, .ui-honor-slideshow-box-03{position:absolute; top:50px;}
+.ui-honor-slideshow-box-02{left:0px;}
+.ui-honor-slideshow-box-03{right:0px;}
+.ui-honor-slideshow-box-02 p, .ui-honor-slideshow-box-03 p{display:none;}
+.ui-honor-slideshow-box-01 a{display:block; width:400px; height:270px; overflow:hidden;}
+.ui-honor-slideshow-box-01 a img{width:100%; height:100%; max-width:400px; max-height:270px;}
+.ui-honor-slideshow-box-02 a, .ui-honor-slideshow-box-03 a{display:block; width:260px; height:175px; overflow:hidden;}
+.ui-honor-slideshow-box-02 a img, .ui-honor-slideshow-box-03 a img{width:100%; height:100%; max-width:260px; max-height:175px;}
+.ui-honor-left, .ui-honor-right{width:27px; height:52px; position:absolute; top:150px;}
+.ui-honor-left{left:0px;}
+.ui-honor-right{right:0px;}
+/*----------大事记----------*/
+.ui-events{width:670px; position:relative; background:url(../icon/timeline.jpg) left 7px repeat-x; overflow:hidden; margin:0 auto;}
+.ui-events-timeline{width:1500px; overflow:hidden; position:relative;}
+.ui-events-timeline li{float:left; padding:23px 25px 0; text-align:center;font-size:18px; position:relative;background:url(../icon/verticalline.jpg) center top no-repeat;}
+.ui-events-timeline li a{color:#333; padding:25px 0 0;}
+.ui-events-timeline li:hover a{background:url(../icon/move.png) no-repeat 10px 0px;}
+.ui-events-timeline-selected{background:url(../icon/selected.png) no-repeat 10px 0px; color:#c7000a!important;}
+.ui-events-list-box{ clear: both; padding:50px 0 0;}
+.ui-events-list{width:10000px; overflow:hidden;}
+.ui-red-line{display:inline-block; float:left; width:55px; height:1px; overflow:hidden; background:#c7000a;}
+.ui-red-gray{display:inline-block; float:right; width:605px; height:1px; overflow:hidden; background:#999;}
+.ui-events-list-writing{float:left; width:680px;}
+.ui-events-list-writing dd{border-bottom:1px dashed #888; overflow:hidden; padding:10px 0px;font-size:14px;line-height:25px;}
+.ui-events-list-writing dd em{width:61px; float:left; font-size:14px; color:#000;text-align:right;margin-right:24px;}
+.ui-events-list-writing dd p{float:left; width:590px;}
+.ui-events-list-writing dd p a{display:block; font-size:14px; color:#333; margin:0 0 10px;}
+.ui-events-list-writing dd p a:hover{color:#c7000a;}
+.ui-events-timeline-left, .ui-events-timeline-right{display:block; width:6px; height:13px; position:absolute; top:28px; z-index:99;}
+.ui-events-timeline-left{left:0px;}
+.ui-events-timeline-right{right:0px;}
+.ui-events-timeline-left:hover{background: url(../icon/icon.png) -521px 0px no-repeat;}
+.ui-events-timeline-right:hover{background: url(../icon/icon.png) -537px 0px no-repeat;}
+.ui-events-timeline-triangle{display:block; width:10px; height:10px; position:absolute; top:0px; right:0px;}
+/*----------联系我们----------*/
+.ui-contact-us-title{height:32px; border-bottom:1px solid #ccc;}
+.ui-contact-us-title p{float:left; height:32px; font-size:22px; color:#c7000a; border-bottom:1px solid #c7000a;}
+.ui-contact-us-title p i{float:left; width:19px; height:19px; margin:6px 6px 0 0;}
+.ui-contact-us-city-box{padding:20px 0 20px; overflow:hidden; border-bottom:1px solid #ccc;margin-bottom:100px;}
+.ui-contact-us-city{float:left; width:325px;}
+.ui-contact-us-city-right{padding:0 30px 0 0;}
+.ui-contact-us-city-picture, .ui-contact-us-map-unfold-picture{display:block; width:315px; height:170px; overflow:hidden; padding:0 0 20px;}
+.ui-contact-us-city-picture img, .ui-contact-us-city-picture img{width:100%; height:100%; max-width:315px; max-height:170px;}
+.ui-contact-us-city-name{overflow:hidden; padding:0 0 15px;}
+.ui-contact-us-city-name em{float:left; font-size:16px; color:#c7000a;}
+.ui-contact-us-city-name a, .ui-contact-us-map-unfold-navigation a{float:right; font-size:12px; color:#333; background:url(../icon/navigation-arrow.png) no-repeat right; padding:0 15px 0 0; margin:3px 0 0;}
+.ui-contact-us-city-information li{line-height:22px; font-size:12px; color:#333;overflow:hidden;}
+.ui-contact-us-city-information li strong{float:left; width:40px;}
+.ui-contact-us-city-information li i{float:left; width:285px;}
+.ui-contact-us-map{padding:60px 0px 60px; text-align:center; position:relative;}
+.ui-contact-us-map-city{width:360px; background:#fbe6e8; padding:5px 0;box-shadow:0px 0px 20px 0px #ccc;z-index:10; position:relative;}
+.ui-contact-us-map-city:after{content:"";border-width:15px 20px 0 0; border-style:solid;border-color:#fbe6e8 transparent;}
+.ui-contact-us-map-city li{text-align:left;padding:8px 25px; border-bottom:1px solid #f7d2d6;}
+.ui-contact-us-map-city li a{font-size:14px; color:#333; line-height:26px;}
+.ui-contact-us-map-city li a:hover{color:#c7000a;}
+.ui-contact-us-map-city li .ul_map_pro_triangle{display:block;position:absolute;width:30px;height:30px;top:45px;left:8px;background:url(../icon/triangle-icon.png);}
+.ui-contact-us-map-unfold{background:#fff; padding:20px 25px 20px 25px; position:absolute; top:-360px; left:0;width:310px; box-shadow:0px 0px 20px 0px #ccc; margin:0 auto;z-index:10; margin-bottom:-22px;}
+.ui-contact-us-map-unfold:after{content:"";position:absolute;bottom:-10px;left:20px;border-width:10px 10px 0 10px; border-style:solid;border-color:#fff transparent;}
+.ui-contact-us-map-unfold-name{font-size:16px; color:#333;}
+.ui-contact-us-map-unfold-list{padding:10px 0 0;}
+.ui-contact-us-map-unfold-list dd{line-height:22px; font-size:12px; color:#333;}
+.ui-contact-us-map-unfold-list dd strong{float:left; width:40px;}
+.ui-contact-us-map-unfold-list dd i{float:left; width:275px;}
+.ui-contact-group-tab a{position:relative;}
+.ui-contact-group-tab a span{position:absolute;background-position:-582px 0px;width:9px;height:5px;}
+.ui-contact-group-tab a:hover span{background-position:-582px -6px !important;}
+.ui-contact-group-tab .ui-guarantee-group-profile-selected span{background-position:-582px -6px !important;}
+.ui-contact-group-tab-icon1{top:15px;left:160px;}
+.ui-contact-group-tab-icon2{top:15px;left:173px;}
+.ui-contact-group-tab-icon3{top:15px;left:168px;}
+
+
+/*--------------------新闻中心页面--------------------*/
+/*----------瀚华动态----------*/
+.ui-news-inquiry-box{overflow:hidden;}
+.ui-news-inquiry{float:right;}
+.ui-news-inquiry-years{float:left; font-size:14px; color:#999; padding:0 20px 0 0;}
+.ui-news-inquiry-selected{float:left; width:80px; height:20px; overflow:hidden; position:relative;}
+.ui-news-inquiry-selected select{width:100px; font-size:14px; color:#000; overflow:hidden; position:absolute; top:0px; left:0px; background:none;}
+.ui-news-inquiry-selected i{width:9px; height:5px; position:absolute; top:7px; right:2px; -webkit-transition: -webkit-transform 0.5s ease-out; -moz-transition: -moz-transform 0.5s ease-out; transition: transform 0.5s ease-out;}
+.ui-news-inquiry-selected:hover i{-webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); transform: rotate(180deg);}
+.ui-news-list{padding:35px 0 0;}
+.ui-news-list li{overflow:hidden; padding:25px 0 30px 0;border-bottom: dashed 1px #999;}
+.ui-news-list-left{float:left; width:158px; height:100px; overflow:hidden; padding:0 25px 0 0;}
+.ui-news-list-left img{width:100%; height:100%; max-width:158px; max-height:100px;}
+.ui-news-list-right{overflow:hidden;}
+.ui-news-list-right h2 a{font-size:18px; color:#000;}
+.ui-news-list-right-time a:hover, .ui-news-list-right h2 a:hover{color:#c7000a;}
+.ui-news-list-right p{font-size:12px; color:#333; padding:10px 0 15px; line-height:20px; text-justify:inter-ideograph; text-align:justify;}
+.ui-news-list-right-time span, .ui-news-list-right-time a{font-size:12px; color:#666;}
+.ui-news-list-right-time span{float:left;}
+.ui-news-list-right-time a{float:right;}
+.ui-news-page-box{text-align:center;margin-top:20px;}
+.ui-news-page{display:inline-block; line-height:30px;}
+.ui-news-page > a, .ui-news-page span{float:left; display:inline-block; width:30px; height:30px; font-size:14px; color:#777; margin:0 8px;}
+.ui-pageprev, .ui-pagenext{width:24px; height:24px;}
+.ui-pageprev:hover{background-position:-669px 3px;}
+.ui-pagenext:hover{background-position:-703px 3px;}
+.ui-news-page-selected{font-weight:bold; color:#fff!important; background-position:-737px 0px;}
+/*----------媒体报道 - 内容页----------*/
+.ui-media-reports-content{overflow:hidden; text-align:center;}
+.ui-media-reports-content h2{font-size:24px; color:#c7000a;}
+.ui-media-reports-content span{font-size:14px; color:#666; padding-bottom:0px;}
+.ui-media-reports-content p{font-size:14px; color:#333; text-justify:inter-ideograph; text-align:justify; line-height:26px;}
+/*.ui-media-reports-content-p{display:inline-block; width:450px; height:295px; overflow:hidden; padding:0 0 25px;}*/
+.ui-media-reports-content-p img{width:100%; height:100%; max-width:450px; max-height:295px;}
+
+/*--------------------瀚华产品页面--------------------*/
+/*----------互联网金融----------*/
+.ui-internet-banking{overflow:hidden; width:100%; text-align:center;}
+.ui-internet-banking li{float:left; width:40%; padding:0 4.5%;}
+.ui-internet-banking-line{border-right:1px solid #ccc;}
+.ui-yun{width:190px; height:70px;text-align:center;margin:0 auto;}
+.ui-yun-explanation{height:140px; font-size:14px; color:#333; line-height:20px; text-align:left; padding:50px 0 0;}
+.ui-yun-click-text{display:block; font-size:14px; color:#c7000c;}
+.ui-yun-click-but{display:inline-block; height:35px; line-height:35px; padding:0 10px; margin:15px 0 0; font-size:18px; color:#c7000a; background:#fff; border:1px solid #c7000a; border-radius:5px; -ms-border-radius:5px; -webkit-border-radius:5px;}
+.ui-yun-click-but span{float:left;}
+.ui-width200{width:200px;height:35px;}
+.ui-width132{width:132px;}
+/*.ui-yun-click-but:hover{color:#fff; background:#c7000a;}*/
+.ui-yun-click-but:hover i{background-position:-796px 0px;}
+.ui-width200:hover { color:#fff; background:url(../images/but01.jpg) no-repeat; background-position-y:-35px;}
+.ui-width132{width:132px;}
+.ui-yun-arrow{float:right; width:9px; height:10px; margin:13px 0 0;}
+.ui-tong-box p{overflow:hidden;}
+.ui-tong{float:left; text-align:right;}
+.ui-tong-code strong{display:inline-block; font-size:14px; color:#333; padding:0 0 15px;}
+.ui-tong-code span{display:inline-block; width:78px; height:78px; overflow:hidden;}
+.ui-tong-code span img{width:100%; height:100%; max-width:78px; max-height:78px;}
+/*--------------------瀚华担保页面--------------------*/
+/*----------瀚华担保 - 集团简介----------*/
+.ui-guarantee-group-profile-tab{width:100%;height:35px;}
+.ui-guarantee-group-profile-tab a/*, .ui-guarantee-group-profile-tab span*/{font-size:14px; color:#333;}
+.ui-guarantee-group-profile-tab a{display:inline-block; height:30px;margin-right:1px;padding:2px 15px;background-color:#ececed;line-height:30px;}
+.ui-guarantee-group-profile-tab a:hover{color:#fff;background-color:#d74b53;}
+.ui-guarantee-group-profile-selected{height:30px; color:#fff !important;background-color:#d74b53 !important;line-height:30px;}
+.ui-guarantee-group-qualification{width:100%; overflow:hidden; padding:40px 0 0;}
+.ui-guarantee-group-qualification li{float:left; width:17.9%; padding:0 1%; text-align:center;}
+.ui-guarantee-group-qualification span{display:inline-block; width:108px; height:108px; text-align:center; font-size:26px; color:#c7000a; line-height:108px;}
+.ui-guarantee-group-qualification span i{font-size:18px; color:#c7000a;}
+.ui-guarantee-group-qualification p{font-size:12px; color:#333; line-height:20px; padding:10px 0 0;}
+.ui-guarantee-group-explanation{padding:50px 0 0;}
+.ui-guarantee-group-explanation p, .ui-guarantee-company-vision p{font-size:14px; color:#333; line-height:26px; padding:0 0 30px; text-justify:inter-ideograph; text-align:justify;}
+/*----------瀚华担保 - 公司愿景----------*/
+.ui-guarantee-company-vision{padding:30px 0 0;}
+.ui-guarantee-company-vision span{display:inline-block; width:670px; height:300px; overflow:hidden; padding:0 0 25px;}
+.ui-guarantee-company-vision span img{width:100%; height:100%; max-width:670px; max-height:300px;}
+/*----------瀚华担保 - 集团荣誉----------*/
+.ui-guarantee-group-honors{overflow:hidden;}
+.ui-guarantee-group-honors li{overflow:hidden; padding:15px; line-height:40px;border-bottom: dotted 1px #999;}
+.ui-guarantee-group-honors li i{padding:0 10px 0 0;}
+.ui-guarantee-group-honors li i, .ui-guarantee-group-honors li p{float:left; font-size:14px; color:#333;}
+.ui-guarantee-group-honors li span{float:right; display:inline-block; width:60px; height:40px; overflow:hidden;}
+.ui-guarantee-group-honors li span img{width:100%; height:100%; max-width:60px; max-height:40px;cursor:pointer;}
+/*----------瀚华担保 - 业务类型----------*/
+.ui-guarantee-business-type{width:100%; margin:20px 0 0;}
+.ui-guarantee-business-type-title{width:13%; padding:0 10px; text-align:center; border-bottom:1px solid #c7000a; border-right:1px solid #ccc;}
+.ui-guarantee-business-type-title strong{font-size:14px; color:#c7000a;}
+.ui-guarantee-business-type-content{width:87%;}
+.ui-guarantee-business-type-content div{padding:15px; border-bottom:1px solid #ccc;}
+.ui-guarantee-business-type-content div strong{display:inline-block; font-size:14px; color:#333; padding:0 0 10px;}
+.ui-guarantee-business-type-content div p{font-size:14px; color:#333; line-height:26px; text-justify:inter-ideograph; text-align:justify;}
+/*----------瀚华担保 - 业务流程----------*/
+.ui-guarantee-business-process{width:100%; overflow:hidden; padding:15px 0 0; text-align:center;}
+.ui-guarantee-business-process li{float:left; display:inline-block;}
+.ui-width16{width:16%;}
+.ui-width5{width:4.9%;position:relative;}
+.ui-width5 .ui-parting-line{width:1px;height:375px;background-color:#ddd;position:absolute;top:85px;left:15px;}
+.ui-guarantee-business-process li span{display:inline-block; width:80px; height:80px; text-align:center;}
+.ui-guarantee-business-process li strong{display:inline-block; font-size:15px; color:#333; padding:10px 0;}
+.ui-guarantee-business-process li p, .ui-guarantee-partner-explanation{font-size:14px; color:#333; text-justify:inter-ideograph; text-align:justify; line-height:26px;}
+.ui-guarantee-business-process li i{display:inline-block; width:9px; height:18px; text-align:center; margin:35px 0 0;}
+/*----------瀚华担保 - 合作伙伴----------*/
+.ui-guarantee-partner{padding:20px 0 0;}
+.ui-guarantee-partner-p{padding:30px 0 0; overflow:hidden;}
+.ui-guarantee-partner-p-l{float:left; width:335px;}
+.ui-guarantee-partner-p-l p{padding:0 0 20px; overflow:hidden;}
+.ui-guarantee-partner-p-l p i{font-size:20px; color:#c7000a;}
+.ui-guarantee-partner-p-l p strong{font-size:14px; color:#333;}
+.ui-guarantee-partner-p-l div span{display:inline-block; float:left; width:145px; height:100px; overflow:hidden; padding:0 22px 22px 0;}
+.ui-guarantee-partner-p-l div span img{width:100%; height:100%; max-width:145px; max-height:100px;}
+/*----------瀚华担保 - 客户合作----------*/
+.ui-guarantee-customer-collaboration{padding:70px 0 0; overflow:hidden;}
+.ui-guarantee-customer-collaboration li{float:left; padding:0 17px 0 0; text-align:center;}
+.ui-guarantee-customer-collaboration li span{display:inline-block; width:150px; height:150px; overflow:hidden;}
+.ui-guarantee-customer-collaboration li span img{width:100%; height:100%; max-width:150px; max-height:150px;}
+.ui-guarantee-customer-collaboration li p{font-size:16px; color:#333; padding:10px 0 0;}
+/*--------------------瀚华信贷页面--------------------*/
+/*----------瀚华信贷 - 公司简介----------*/
+.ui-credit-company-profile li{width:22.9%;}
+/*----------瀚华信贷 - 公司荣誉----------*/
+.ui-credit-honor li{padding:10px 0;}
+/*----------瀚华信贷 - 公司理念----------*/
+.ui-credit-company-philosophy-run{padding:20px 0 0; overflow:hidden;}
+.ui-credit-company-philosophy-run-title{height:26px; border-bottom:1px solid #ccc;}
+.ui-credit-company-philosophy-run-title span{display:inline-block; height:26px; border-bottom:1px solid #c7000a;}
+.ui-credit-company-philosophy-run-title span i{display:inline-block; width:14px; height:14px; margin:0 5px 0 0;}
+.ui-credit-company-philosophy-run-title span strong{font-size:16px; color:#c7000a;}
+.ui-credit-company-philosophy-run-explanation{padding:25px 0 0;}
+.ui-credit-width20{width:21.5%;}
+.ui-credit-width30{width:30%;position:relative;}
+.ui-credit-width30 .ui-parting-line{width:1px;height:150px;position:absolute;top:8px;left:218px;background-color:#ddd;}
+.ui-credit-right30{padding:0 30px 0 0;}
+.ui-credit-company-philosophy-run-explanation li{float:left;}
+.ui-credit-company-philosophy-run-explanation li span i{font-size:16px; color:#333; padding:0 5px 0 0;}
+.ui-credit-company-philosophy-run-explanation li span strong, .ui-credit-company-philosophy-run-explanation li p{font-size:14px; color:#333;}
+.ui-credit-company-philosophy-run-explanation li p{line-height:26px; text-justify:inter-ideograph; text-align:justify; padding:10px 0 0;}
+/*----------瀚华信贷 - 客户故事----------*/
+.ui-credit-customer-stories{padding:0px;}
+.ui-credit-customer-stories em{font-size:18px; color:#333;}
+/*----------瀚华信贷 - 产品介绍----------*/
+.ui-credit-products{padding:60px 0 0; overflow:hidden;}
+.ui-credit-products-left{float:left; width:145px; text-align:center; padding:0 0 0 20px;}
+.ui-credit-products-left span{display:inline-block; width:145px; height:145px; overflow:hidden; margin:0 0 30px;}
+.ui-credit-products-left span img{width:100%; height:100%; max-width:145px; max-height:145px;}
+.ui-credit-products-left strong{font-size:22px; color:#c7000a;}
+.ui-credit-products-right{float:right; width:460px;}
+.ui-credit-products-right li{padding:20px 0 10px 0; overflow:hidden;border-bottom: dashed 1px #999;}
+.ui-credit-products-right li strong{display:inline-block; float:left; width:80px; line-height:22px;}
+.ui-credit-products-right li p{float:left; width:380px; line-height:22px;}
+.ui-credit-products-right li strong, .ui-credit-products-right li p{font-size:14px; color:#333;}
+/*----------瀚华信贷 - 服务介绍----------*/
+.ui-credit-service-5s-box, .ui-credit-service-8time-box{overflow:hidden;}
+.ui-credit-service-strong{color:#333!important;}
+.ui-credit-service-5s{width:100%; padding:40px 0 0;}
+.ui-credit-service-5s li{float:left; width:20%; text-align:center;}
+.ui-credit-service-5s li span{display:inline-block; width:82px; height:82px;}
+.ui-credit-service-5s li p{font-size:26px; color:#333; padding:10px 0 0;}
+.ui-credit-service-8time-box{padding:50px 0 0;}
+.ui-credit-service-8time{padding:40px 0 40px; overflow:hidden;margin-bottom:40px;border-bottom:1px solid #ccc;}
+.ui-credit-service-8time-left{float:left; width:345px; text-align:right;}
+.ui-credit-service-8time-left strong{font-size:22px; color:#c7000a;}
+.ui-credit-service-8time-left em{display:inline-block; font-size:22px; color:#666; padding:5px 0 0;}
+.ui-credit-service-8time-right{float:right; width:290px; overflow:hidden;}
+.ui-credit-service-8time-right span{display:inline-block; float:left; width:78px; height:78px; overflow:hidden;}
+.ui-credit-service-8time-right span img{width:100%; height:100%; max-width:78px; max-height:78px;}
+.ui-credit-service-8time-right p{font-size:14px; color:#333; line-height:26px; padding:0 80px 0 15px; overflow:hidden;}
+.ui-credit-service-8time-process{width:100%; overflow:hidden;}
+.ui-credit-service-8time-process-right{padding:0 4% 0 0;position:relative;}
+.ui-credit-service-8time-process-right .ui-parting-line{width:1px;height:287px;position:absolute;top:10px;left:160px;background-color:#ddd;}
+.ui-credit-service-8time-process li{width:30.5%; float:left; text-align:center;}
+.ui-credit-service-8time-process li div span{display:inline-block; width:82px; height:82px;}
+.ui-credit-service-8time-process li div em{display:block; font-size:15px; color:#333; font-weight:bold; padding:10px 0 20px;}
+.ui-credit-service-8time-process li strong{font-size:18px; color:#c7000a;}
+.ui-credit-service-8time-process li p{font-size:14px; color:#333; line-height:26px; text-align:left; text-justify:inter-ideograph; text-align:justify; padding:10px 0 0;}
+
+/*--------------------瀚华保理页面--------------------*/
+/*----------瀚华保理 - 保理介绍----------*/
+.ui-factoring-introduction{padding:25px 0 0; overflow:hidden;}
+.ui-factoring-introduction p{font-size:14px; color:#333; line-height:26px; text-justify:inter-ideograph; text-align:justify; padding:0 0 20px;}
+/*----------瀚华保理 - 互联网金融平台----------*/
+.ui-factoring-platform{padding:50px 0 0;}
+.ui-factoring-platform, .ui-factoring-platform-cjb{overflow:hidden;}
+.ui-factoring-platform-cjb{padding:0 0 70px;}
+.ui-factoring-platform-cjb-left{float:left; padding:0 0 0 50px;}
+.ui-factoring-platform-cjb-left span{display:block; width:150px; height:150px; margin:0 0 25px;}
+.ui-factoring-platform-cjb-left strong{font-size:22px; color:#c7000a;}
+.ui-factoring-platform-cjb-right{float:right; padding:35px 90px 0 0;}
+.ui-factoring-platform-cjb-right span{width:200px; height:55px;}
+.ui-factoring-platform-cjb-right p, .ui-factoring-platform-cjb-right em{font-size:16px; color:#333;}
+.ui-factoring-platform-cjb-right p{padding:0 0 25px;}
+.ui-factoring-platform-cjb-right em{line-height:26px;}
+.ui-factoring-platform-products-box{padding:0 0 35px;}
+.ui-factoring-platform-products{font-size:14px; color:#333; line-height:26px; text-justify:inter-ideograph; text-align:justify; padding:10px 0 0;}
+.ui-line-hide{border:none!important;}
+.ui-factoring-platform-process{width:610px; height:145px; overflow:hidden; padding:30px 0 0;}
+.ui-factoring-platform-process img{width:100%; height:100%; max-width:610px; max-height:145px;}
+.ui-factoring-platform-three{padding:25px 0 0; overflow:hidden;}
+.ui-factoring-platform-three li{float:left; border-top:3px solid #c7000a; padding:10px 20px 0;}
+.ui-factoring-platform-three-width{width:25.3%;}
+.ui-factoring-platform-three-height{height:125px;}
+.ui-factoring-platform-three-bg{background:#f1e1e3;}
+.ui-factoring-platform-three-right{margin:0 3% 0 0;}
+.ui-factoring-platform-three li span{width:25px; height:25px; font-size:16px; color:#fff; text-align:center; line-height:25px;}
+.ui-factoring-platform-three li p{font-size:14px; color:#333; line-height:22px; text-justify:inter-ideograph; text-align:justify; padding:15px 0 0; text-align:left;}
+.ui-factoring-platform-four-width{width:17.5%;}
+.ui-factoring-platform-four-height{height:150px;}
+/*.ui-factoring-platform-four-bg{background:#e8e8e8;}*/
+.ui-factoring-platform-four-bg{background:#f1e1e3;}
+.ui-factoring-platform-four-right{margin:0 2% 0 0;}
+.ui-factoring-platform-five{padding:25px 0 0; overflow:hidden;}
+.ui-factoring-platform-five li{float:left; width:14%; text-align:center; padding:0 3%;}
+.ui-factoring-platform-five li span{display:inline-block; width:50px; height:50px; text-align:center;}
+.ui-factoring-platform-five li strong{display:block; font-size:14px; color:#333; text-align:center; padding:15px 0;}
+.ui-factoring-platform-five li p{font-size:14px; color:#333; text-align:left; line-height:20px; text-justify:inter-ideograph; text-align:justify;}
+/*----------瀚华保理 - 联系我们----------*/
+.ui-factoring-contact, .ui-factoring-contact-img, .ui-factoring-contact-information{overflow:hidden;}
+.ui-factoring-contact-img span{display:inline-block; width:100%; max-width:680px;}
+.ui-factoring-contact-img span img{width:100%; height:auto; max-width:680px;}
+.ui-factoring-contact-img a{display:inline-block; font-size:12px; color:#333; float:right; margin:15px 0 0;}
+.ui-factoring-contact-img a:hover{color:#c7000a;}
+.ui-factoring-contact-information{padding:20px 0 0;}
+.ui-factoring-contact-information-left{float:left; padding:28px 70px 0 0;}
+.ui-factoring-contact-information-left span{float:left; width:35px; height:35px;}
+.ui-factoring-contact-information-left em{display:inline-block; font-size:18px; color:#333; padding:5px 0 0 10px;}
+.ui-factoring-contact-information p{float:left; font-size:14px; color:#333; line-height:30px;}
+/*--------------------瀚华资本页面--------------------*/
+/*----------瀚华资本 - 投资方向----------*/
+.ui-capital-three{padding:40px 0 0; overflow:hidden;}
+.ui-capital-three li{float:left; width:22%; text-align:center;}
+.ui-capital-three-right{padding:0 3.5% 0 0;}
+.ui-capital-three li span{display:inline-block; width:150px; height:150px; overflow:hidden; text-align:center;}
+.ui-capital-three li span img{width:100%; height:100%; max-width:150px; max-height:150px;}
+.ui-capital-three li strong{display:block; font-size:18px; color:#333; text-align:center; padding:25px 0 35px;}
+.ui-capital-three-explanation{font-size:14px; text-align:left;}
+.ui-capital-three-explanation em, .ui-capital-three-explanation u{display:block; font-weight:bold; padding:0 0 8px;}
+.ui-capital-three-explanation em{color:#c7000a;}
+.ui-capital-three-explanation u, .ui-capital-three-explanation p{color:#333;}
+.ui-capital-three-explanation p{padding:0 0 20px; line-height:20px;}
+.ui-capital-three-explanation p i{display:inline-block; width:65px; line-height:24px;}
+/*----------瀚华资本 - 业务布局----------*/
+.ui-capital-layout-map-box{padding:10px 0 0; overflow:hidden;}
+.ui-capital-layout-map-box p{font-size:14px; color:#333; line-height:26px;}
+.ui-capital-layout-map{display:inline-block; width:575px; height:475px; overflow:hidden; padding:10px 0 20px;}
+.ui-capital-layout-map img{width:100%; height:100%; max-width:575px; max-height:475px;}
+
+
+/*--------------------投资者关系--------------------*/
+/*----------页面标题----------*/
+
+.ui-investor-title-1, .ui-investor-title-2 { min-height: 30px; line-height: 30px; }
+.ui-investor-title-3 { min-height: 30px; line-height: 24px; padding-bottom: 20px; }
+.ui-investor-title-1 { border-bottom: solid 1px #ddd; }
+.ui-investor-title-2, .ui-investor-title-3 { border-bottom: solid 1px #c7000a; }
+
+.ui-investor-title-1 span.ui-title-icon, .ui-investor-title-2 span.ui-title-icon, .ui-investor-title-3 span.ui-title-icon{ display: inline-block; width: 14px; height: 14px; background: url(../icon/investor-icon.png) -90px 0px no-repeat; margin-right: 10px; }
+.ui-investor-title-1 strong, .ui-investor-title-2 strong{ display: inline-block; font-size: 16px; color: #333; padding-right: 5px; }
+.ui-investor-title-3 strong { display: inline-block; font-size: 14px; color: #333; font-weight: normal; padding-right: 5px; }
+.ui-investor-title-1 strong { position: absolute; height: 30px; border-bottom: solid 1px #c7000a; }
+/*----------Tab----------*/
+.ui-investor-tab { border-bottom: solid 1px #ddd; height: 30px; font-size: 14px; }
+.ui-investor-tab ul li { float: right; border-right: solid 1px #aaa; height: 18px; line-height: 18px; padding: 0px 20px; margin-top: 6px; }
+.ui-investor-tab ul li a { display: block; height: 18px; color: #333; }
+.ui-investor-tab ul li:hover a{ color: #c7000a; }
+.ui-investor-tab ul li.ui-selected a{ height: 24px; border-bottom: solid 1px #c7000a; color: #c7000a; }
+/*----------搜索----------*/
+.ui-investor-search { border-bottom: solid 1px #ddd; padding-bottom: 20px; }
+.ui-investor-search strong { display: inline-block; font-size: 14px; font-weight: normal; margin-right: 10px; line-height: 24px; vertical-align: middle; }
+.ui-investor-search input[type="text"] { width: 120px; height: 18px; line-height: 18px; border: solid 1px #ddd; padding: 3px 5px; margin-right: 40px; font-size: 13px; vertical-align: middle; }
+.ui-investor-search select { width: 100px; border: solid 1px #ddd; margin-right: 10px; height: 24px; font-size: 13px; vertical-align: middle; }
+.ui-investor-search input[type="button"] { height: 24px; padding: 0px 20px 0px 30px; background: #c7000a url(../icon/search-button-icon.png) 10px center no-repeat; color: #fff; cursor: pointer;  font-size: 13px; vertical-align: middle; }
+.ui-investor-search input[type="button"]:hover { background-color: #e22730; }
+/*----------列表----------*/
+ input[type='text'] {border: solid 1px #ddd; height:22px;}
+.ui-investor-list ul li{ padding: 10px 0px 10px 20px; line-height: 30px; height: 30px; font-size: 14px; border-bottom: dotted 1px #999; overflow: hidden; clear: both; background:url(../icon/list-style.png) 3px center no-repeat; }
+.ui-investor-list ul li:hover { background-image: url(../icon/list-style-2.png); cursor: pointer; }
+.ui-investor-list ul li:hover strong.ui-title{ color: #c7000a; }
+.ui-investor-list ul li strong.ui-title{ float: left; display: block; color: #333; width: 510px; height: 30px; font-size: 15px; font-weight: normal; white-space: normal; text-overflow: ellipsis; overflow: hidden; }
+.ui-investor-list ul li span.ui-time{ float: left; display: block; color: #888; width: 120px; font-size: 12px; }
+.ui-investor-list ul li span.ui-operate{ float: left; display: block; width: 25px; height: 25px; background: url(../icon/investor-icon.png) 0px 0px no-repeat; margin: 3px 5px 0px 0px; }
+.ui-investor-list ul li span.ui-operate:hover { background-position: -25px 0px; }
+.ui-investor-list-2 { margin-top: 10px; }
+.ui-investor-list-2 ul li{ width: 320px; float: left; line-height: 30px; height: 30px; font-size: 14px; margin: 5px; }
+.ui-investor-list-2 ul li a { color: #333; }
+.ui-investor-list-2 ul li a:hover { color: #c7000a; }
+.ui-investor-list-2 ul li a span.ui-list-icon { display: inline-block; width: 6px; height: 6px; background: url(../icon/investor-icon.png) -104px 0px no-repeat; margin-right: 5px; vertical-align: middle; }
+.ui-investor-list-2 ul li a:hover span.ui-list-icon { background-position: -110px 0px; }
+/*----------表格样式----------*/
+.ui-investor-table-1 { width: 100%; margin-bottom: 40px; }
+.ui-investor-table-1 thead th { background: #eeeeee; color: #333; border-right: solid 1px #ddd; font-size: 15px; line-height: 24px; padding: 3px 5px; }
+.ui-investor-table-1 tbody td, .ui-investor-table-1 tbody th{ border-bottom: solid 1px #ddd; color: #646464; font-size: 13px; line-height: 24px; padding: 5px; }
+.ui-investor-table-1 tbody th { text-align: left; font-weight: normal; border-right: solid 1px #ddd; }
+.ui-investor-table-1 tbody td { text-align: center; }
+.ui-investor-table-1 tbody tr a { color: #333; }
+.ui-investor-table-1 tbody tr a:hover { color: #c7000a; }
+.ui-investor-table-border th, .ui-investor-table-border td { border-right: solid 1px #ddd; }
+.ui-investor-table-border .ui-last-td { border-right: none; }
+.ui-arrow-red { display: inline-block; width: 6px; height: 13px; background: url(../icon/arrow-red.png) no-repeat; vertical-align: middle; margin: 0px 5px; }
+.ui-arrow-green { display: inline-block; width: 6px; height: 13px; background: url(../icon/arrow-green.png) no-repeat; vertical-align: middle; margin: 0px 5px; }
+/*----------纯文本----------*/
+.ui-investor-text { margin: 20px 0px; line-height: 24px; }
+.ui-investor-text strong.ui-title{ display: block; margin-top: 20px; font-size: 14px; color: #333; }
+.ui-investor-text p.ui-text{ margin: 20px 0px; font-size: 14px; color: #333; }
+.ui-investor-text a.ui-text-link { display: block; width: 220px; padding: 5px 30px 5px 10px; height: 24px; line-height: 24px; color: #333; border: solid 1px #ddd; background: #fff url(../icon/arrow-black.png) 240px center no-repeat; margin: 10px 0px 40px 5px; }
+.ui-investor-text a.ui-text-link:hover { background: #c7000a url(../icon/arrow-white.png) 240px center no-repeat; color: #fff; border: solid 1px #c7000a; }
+/*----------常见问题----------*/
+.ui-investor-prolist-title{line-height:65px;}
+.ui-investor-prolist ul li{height:65px;font-size: 15px; border-bottom: dotted 1px #999; overflow: hidden; clear: both;}
+.ui-investor-prolist ul li:hover{ height: auto; cursor:pointer; }
+.ui-investor-prolist ul li:hover p{height:80px;}
+.ui-investor-prolist-img{display: inline-block; width: 20px; height: 20px;background: url(../../icon/investor-icon.png) -50px 0px no-repeat;margin:3px 10px 5px 0px;vertical-align:middle;}
+.ui-investor-prolist-img1{display: inline-block; width: 20px; height: 20px;background: url(../../icon/investor-icon.png) -70px 0px no-repeat;margin:3px 10px 5px 0px;vertical-align:middle;}
+/*----------K线图----------*/
+.ui-investor-kchart { padding: 40px 0px; text-align: center; }
+/*----------联系我们----------*/
+.ui-investor-contact-address{width: 100%; height: 285px; border-bottom: 1px dashed #ccc; margin-bottom: 20px; padding-bottom: 40px; overflow: hidden; } 
+.ui-investor-contact-address div{float: left; width: 320px; margin-right: 40px;} 
+.ui-investor-contact-address p{ margin-bottom: 5px; line-height: 20px; }
+.ui-investor-contact-address .ui-company-img { margin: 20px 0px; }
+.ui-investor-contact-mail{display:block; width: 208px; padding: 0px 12px; font-weight:bold; font-size:15px; line-height:40px; border: 1px solid #c7000a; color: #c7000a; background-color: #fff; border-radius:3px;}
+.ui-investor-contact-mail:hover{color:#fff;background-color:#c7000a;cursor:pointer;} 
+
+/*----------博士后计划----------*/
+.ui-doctor-click-but{width:68px;height:21px;border:1px solid #333;line-height:21px;color:#333;margin:-6px 0px;display:inline-block;padding:0px 8px;border-radius:3px;}
+.ui-doctor-click-but:hover{background-color:#c7000c;color:#fff;border:1px solid #c7000a;}
+.ui-doctor-click-but i{background:url(../icon/arrow-down-black.png) no-repeat; display:block;width:6px;height:9px;float:right;margin:7px 3px 0px;}
+.ui-doctor-click-but:hover i{background:url(../icon/arrow-down-white.png) no-repeat; display:block;width:6px;height:9px;float:right;margin:7px 3px 0px;}
+
+/*----------新-客户故事---------*/
+.ui-story-new{width:170px; height:228px;float:left;padding:24px 34px 23px 24px;background-color:#e6e6e6;}
+.ui-story-new strong{font-size:18px;}
+.ui-story-new span{display:block;margin:15px 0px 42px 0px;}
+.ui-story-new p a{float:left;}
+.ui-story-new:hover,.ui-story-new:hover p a{background-color:red;color:#fff;}
+.ui-story-new:hover p a{ background:url(../icon/navigation-arrow-white.png) no-repeat right;}
+.ui-story-new-more{width:678px;height:227px;}
+.ui-story-new-more p{width:76px;height:80px;margin:60px auto;text-align:center;}
+.ui-story-new-more p img,.ui-story-new-more p a{display:block;}
+.ui-story-new-more p a{margin-top:14px;color:#000;}
+
+
+/*banner新闻条添加*/
+.ui-banner-news{position:absolute;height:40px;width:970px;padding:0 15px;left:50%;margin-left:-500px;font-size:13px;color:#fff;overflow:hidden;}
+.clearFix:after{clear:both;display:block;visibility:hidden;height:0;line-height:0;content:'';}
+.fl{float:left;}
+/*.bn_newsUlRight{position:absolute;left:0;top:0;width:100%;}*/
+.bn_newsUlRight,.bn_newsUlLeft{width:49%;}
+.bn_newsLiRight p,.bn_newsLiLeft p{background:url(../images/bnNews_icon.png) no-repeat 0 16px;padding:0 15px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:40px;text-align:left !important;} 
+.bn_newsUlRight,.bn_newsUlLeft{position:relative;z-index:999;}
+.dn{display:none;}
+.ap{position:relative;}
+.newsbg{background-color:#000;opacity:0.5;filter:alpha(opacity=50);height:40px;-moz-border-radius_topleft:15px;-webkit-border-top-left-radius:15px;-border-top-left-radius:15px;border-top-left-radius:15px;-moz-border-radius_topright:15px;-webkit-border-top-right-radius:15px;-border-top-right-radius:15px;border-top-right-radius:15px;position:absolute;left:0;top:0;width:100%;}
+.bnNewArrow{position:absolute;background:url(../images/bnNews_arrow.png) no-repeat 0 0;width:16px;height:8px;right:15px;top:16px;z-index:1001;cursor:pointer;}
+.ui-promo-tab{bottom:50px;}
+.newsHref{color:white !important;}
+
+/*担保-产品介绍/租赁-产品介绍 修改15.12.16*/
+.ui-icon-loan-growth2{background-position:0 -954px;}
+.ui-icon-loan-growth3{background-position:-150px -954px;}
+.ui-icon-loan-growth5{background-position:-303px -954px;}
+.ui-icon-loan-growth6{background-position:-459px -954px;}
+.ui-icon-loan-growth4{background-position:-618px -954px;}
+.ui-icon-loan-growth1{background-position:-778px -954px;}
+
+.clearFix:after{
+  clear:both;
+  display:block;
+  visibility:hidden;
+  height:0;
+  line-height:0;
+  content:'';
+}
+.fl{float:left;}
+.leasePro_ul{font-size:16px;}
+.leasePro_ul p{/*line-height:100px;*/color:#333;/*width:510px;*/}
+.leasePro_ul td{padding:0 15px;border-bottom:1px dashed #e6e5e3;height:130px;vertical-align:middle;}
+.leasePro_ul .last td{border-bottom:0;}
+.leasePro_ul .iconWrp{margin-right:60px;}
+.leasePro_ul .iconWrp4{margin-right:50px;}
+.leasePro_ul h4{font-size:16px;font-weight:normal;color:#333;text-align:center;}
+.leasePro_icon{display:block;width:71px;height:71px;background:url('../icon/icon.png') no-repeat 0 0 ;margin-bottom:5px;}
+.leasePro_icon1{background-position:-618px -692px;}
+.leasePro_icon2{background-position:-696px -692px;}
+.leasePro_icon3{background-position:-774px -692px;}
+.leasePro_icon4{background-position:-852px -692px;}
+
+/*首页增加瀚华租赁*/
+.ui-business ul li{width:16.6%;}
+.ui-business ul li.last{width:17%;}
+.ui-business li .ui-business-icon-06 {
+    background: url(../icon/business-icon-06.png) no-repeat 13px 15px;
+}
+.ui-business li:hover .ui-business-icon-06 {
+    background: url(../icon/gif-business-icon-06.gif) no-repeat;
+}
+
+
+/*股价信息*/
+.stockPri_table{width:680px;margin:0 auto;color:#646464;}
+.stockPri_table .h3{font-size:18px;font-weight:bold;display:inline-block;padding-top:15px;color:#333;}
+.stockPri_table .h4{font-size:20px;font-weight:normal;display:inline-block;padding-top:20px;color:#646464;}
+.stockPri_table .rate{font-size:20px;font-weight:bold;    padding-top: 20px;}
+.stockPri_table .pri{font-size:30px;font-weight:bold;/*position:relative;top:45px;*/color:#646464;position:absolute;top:45px;left:50%;margin-left:-40px;}
+.stockPri_table td{/*height:85px;*/padding-bottom:15px;border-bottom:1px dashed #e9e9e9;position:relative;}
+.rateIcon{width:11px;height:15px;margin-left:8px;display:inline-block;background:url(../icon/stockRates.png) no-repeat 0 0;}
+.rateIcon.down{background-position:-18px 0;}
+.rateIcon.slice{background-position:right 0;}
+.tc{text-align:center;}
+.height100{/*height:100px;*/overflow:hidden;}
+.stockPri_table .date{color:#646464;font-size:16px;}
+.tip_stPr{font-size:16px;color:#646464;padding:35px 0 10px;}
+.link_stPr a,.link_stPr a:hover{font-size:16px;color:#49a8ef;text-decoration:none;}
+.link_stPr a:hover{text-decoration:underline;}
